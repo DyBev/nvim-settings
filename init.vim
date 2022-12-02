@@ -25,3 +25,11 @@ set noswapfile
 set termguicolors
 
 colorscheme everforest
+
+function SetSyntax()
+	if match('\%1l--.*$', '\%1l')
+		:set syn=GT
+	endif
+endfunction
+
+:autocmd BufReadPost * call SetSyntax()
