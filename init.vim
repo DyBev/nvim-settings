@@ -1,35 +1,9 @@
-set nocompatible
-filetype on
-filetype plugin on
-filetype indent on
-syntax on
-set cursorline
-set incsearch
-set ignorecase
-set scrolloff=15
-:set nu rnu
-:inoremap <Tab> <Esc>
-:vnoremap <Tab> <Esc>Gv
-:nnoremap <Tab> <Esc>
-:cnoremap <Tab> <Esc>
-let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
+lua << EOF
+require("dylan")
+print("hello")
+EOF
 
-set autochdir
-set list
-set listchars=tab:▸·,trail:·
-
-set autoread
-
-set nobackup
-set noswapfile
-set termguicolors
-
+let g:everforest_background = 'hard'
+let g:everforest_better_performance = 1
 colorscheme everforest
-
-function SetSyntax()
-	if match('\%1l--.*$', '\%1l')
-		:set syn=GT
-	endif
-endfunction
-
-:autocmd BufReadPost * call SetSyntax()
+autocmd BufAdd,BufRead,BufEnter * if search('\%1l--.*$','w') > 0 | set syn=GT | endif
