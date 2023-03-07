@@ -20,15 +20,12 @@ syn match GuidedTrackSpecial "<"
 syn match GuidedTrackComment '\v--.*$'
 syn match GuidedTrackDebug '\v--DEBUG.*$'
 syn match GuidedTrackKeyword '\*\(confirm\|blank\|multiple\|quit\|other\|shuffle\|yaxis\|xaxis\|trendline\|clear\|email\|body\|cancel\|login\|navigation\|randomize\|group\|return\|everytime\|share\|events\|startup\|settings\|success\|error\|throwaway\|page\|reset\|list\|save\|answers\)'
-syn match GuidedTrackKeyword '\*\(question\|type\|before\|after\|min\|max\|tip\|time\|date\|icon\|countdown\|header\|default\|tags\|summary\|chart\|data\|color\|opacity\|ticks\|position\|rollovers\|wait\|image\|caption\|repeat\|subject\|to\|when\|identifier\|every\|experiment\|group\|program\|set\|required\|video\|button\|maintain\|audio\|start\|hide\|navigation\|point\|progress\|randomize\|group\|repeat\|title\|picture\|description\|back\|menu\|classes\|trigger\|send\|service\|path\|method\|label\|goto\|xaxis\|yaxis\|switch\|points\|if\|while\|for\)'
+syn match GuidedTrackKeyword '\*\(question\|type\|before\|after\|min\|max\|tip\|time\|date\|icon\|countdown\|header\|default\|tags\|summary\|chart\|data\|color\|opacity\|ticks\|position\|rollovers\|wait\|image\|caption\|repeat\|subject\|to\|when\|identifier\|every\|experiment\|group\|program\|set\|required\|video\|button\|maintain\|audio\|start\|hide\|navigation\|point\|progress\|randomize\|group\|repeat\|title\|picture\|description\|back\|menu\|classes\|trigger\|send\|service\|path\|method\|label\|goto\|xaxis\|yaxis\|switch\|points\|if\|while\|for\|component\|click\|with\)'
+syn match GuidedTrackKeyword '\(>>\_s\a*\.\)\@<=\a*'
 syn match GuidedTrackVariable '{\<.*\>'lc=1
 syn match GuidedTrackVariable '\(^.*{\)\@<=\<\a*\>'
 syn match GuidedTrackVariable '\(\_s=\|=\_s\|=.*\)\@<=\a*\>'
 syn match GuidedTrackNumber '\d'
-
-" regions
-syn region GuidedTrackVariable start=">>"lc=2 end="\>"
-syn region GuidedTrackString start="\"" end="\""
 syn match GuidedTrackTag '\(\a:\|\a:\_s\)\@<=.*$'
 syn match GuidedTrackVariable '*save:.*$'lc=6
 syn match GuidedTrackVariable '*answers:.*$'lc=9
@@ -37,6 +34,10 @@ syn match GuidedTrackTag '\(\(*for:\|*for:\_s*\)\a*\>\_s\)\@<=in'
 syn match GuidedTrackVariable '\(\(\(*for:\|*for:\_s*\)\a*\>\_s\)in\_s\)\@<=\a*\>'
 syn match GuidedTrackVariable '\(if:\|*if:\_s*\)\a*\>'lc=4
 syn match GuidedTrackImageLink '\(*image.*\)\@<=http.*$'
+
+" regions
+syn region GuidedTrackVariable start=">>"lc=2 end="\>"
+syn region GuidedTrackString start="\"" end="\""
 
 "specials
 syn match GTSpecial '='

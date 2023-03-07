@@ -15,6 +15,7 @@ let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
 
 set autochdir
 set list
+
 set listchars=tab:▸·,trail:·
 
 set autoread
