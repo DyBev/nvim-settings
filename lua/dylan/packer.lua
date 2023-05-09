@@ -18,10 +18,19 @@ return require('packer').startup(function(use)
 	use( 'theprimeagen/harpoon' )
 	use( 'mbbill/undotree' )
 	use( 'tpope/vim-fugitive' )
+	use( 'f-person/git-blame.nvim' )
+	use( 'lewis6991/gitsigns.nvim' )
+	use( 'folke/tokyonight.nvim' )
+	use( 'kylechui/nvim-surround' )
+	use( 'folke/trouble.nvim' )
+	use( 'nvim-tree/nvim-tree.lua' )
+	use( 'kyazdani42/nvim-web-devicons' )
+	use( 'folke/which-key.nvim' )
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		requires = {
+
 			-- LSP Support
 			{'neovim/nvim-lspconfig'},
 			{'williamboman/mason.nvim'},
@@ -40,6 +49,4 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
-
-	use "rebelot/kanagawa.nvim"
 end)

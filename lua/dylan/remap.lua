@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-vim.keymap.set("n","<leader>pv",vim.cmd.Ex)
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -7,8 +6,8 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>pb", "\"+p")
+vim.keymap.set("n", "<leader>by", "\"+y", { desc = "Buffer Yank" } )
+vim.keymap.set("v", "<leader>by", "\"+y", { desc = "Buffer Yank" } )
+vim.keymap.set("n", "<leader>bp", "\"+p", { desc = "Buffer Paste" } )
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Substitude all occurances of word" } )
