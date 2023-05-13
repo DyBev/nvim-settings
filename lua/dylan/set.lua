@@ -19,7 +19,7 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.undodir = 'C:\Users\dylan\AppData\Local\nvim-undo'
+vim.opt.undodir = 'C:/Users/dylan/AppData/Local/nvim-undo'
 vim.opt.undofile = true
 
 vim.opt.scrolloff = 15
