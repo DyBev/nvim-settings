@@ -15,14 +15,15 @@ syn match GuidedTrackSpecial "->"
 
 " keywords
 " keywords without : following
-syn match GuidedTrackKeyword '\*\(confirm\|blank\|multiple\|quit\|other\|shuffle\|yaxis\|xaxis\|trendline\|clear\|email\|body\|login\|navigation\|randomize\|group\|return\|everytime\|share\|events\|startup\|success\|error\|throwaway\|page\|list\|settings\|reset\|searchable\|purchase\|status\|management\|navigation\|component\|click\|xaxis\|yaxis\)\>\(:\)\@!'
+syn match GuidedTrackKeyword '^\(\t\)*\*\(confirm\|blank\|multiple\|quit\|other\|shuffle\|yaxis\|xaxis\|trendline\|clear\|email\|body\|login\|navigation\|randomize\|group\|return\|everytime\|share\|events\|startup\|success\|error\|throwaway\|page\|list\|settings\|reset\|searchable\|purchase\|status\|management\|navigation\|component\|click\|xaxis\|yaxis\)\>\(:\)\@!'
 " keyworkds with : following
-syn match GuidedTrackKeyword '\*\(question\|type\|before\|after\|min\|max\|tip\|time\|date\|icon\|countdown\|header\|default\|tags\|summary\|chart\|data\|color\|opacity\|ticks\|position\|rollovers\|wait\|image\|caption\|repeat\|subject\|to\|when\|identifier\|every\|experiment\|group\|program\|required\|video\|button\|maintain\|audio\|start\|hide\|point\|progress\|randomize\|group\|repeat\|title\|picture\|description\|back\|menu\|classes\|trigger\|send\|service\|path\|method\|label\|goto\|switch\|points\|if\|while\|for\|with\|settings\|set\|answers\|name\|placeholder\|frequency\|save\|list\|cancel\|until\|what\|database\)\>\(:\)\@='
+syn match GuidedTrackKeyword '^\(\t\)*\*\(question\|type\|before\|after\|min\|max\|tip\|time\|date\|icon\|countdown\|header\|default\|tags\|summary\|chart\|data\|color\|opacity\|ticks\|position\|rollovers\|wait\|image\|caption\|repeat\|subject\|to\|when\|identifier\|every\|experiment\|group\|program\|required\|video\|button\|maintain\|audio\|start\|hide\|point\|progress\|randomize\|group\|repeat\|title\|picture\|description\|back\|menu\|classes\|trigger\|send\|service\|path\|method\|label\|goto\|switch\|points\|if\|while\|for\|with\|settings\|set\|answers\|name\|placeholder\|frequency\|save\|list\|cancel\|until\|what\|database\)\>\(:\)\@='
 
 " matches
-syn match GuidedTrackVariable '{\<.*\>'lc=1
-syn match GuidedTrackVariable '\(^.*{\)\@<=\<\a*\>'
-syn match GuidedTrackVariable '\(\_s=\|=\_s\|=.*\)\@<=\a*\>'
+syn match GuidedTrackVariable '\({\)\@<=\<.*\>\(}\)\@='
+syn match GuidedTrackVariable '\(\(\_s\)=\(\_s\)\)\@<=\<.*\>'
+syn match GuidedTrackVariable '\(\(\_s\)=\(\_s\)\)\@<=\<.*\(\[\)\@='
+syn match GuidedTrackVariable '\(->\(\_s\)*\)\@<=\<[a-zA-Z0-9-_]*\>'
 syn match GuidedTrackNumber '\d'
 syn match GuidedTrackTag '\(\*[a-z]*:\(\_s\)\?\)\@<=[a-zA-Z?!:\/.,0-9 \-_'%@]*\>'
 syn match GuidedTrackVariable '\(^\(\t*\)\?\*\(if\|for\)*:\(\_s\)\?\(.*\)\?\)\@<=\(\<[a-zA-Z0-9-_]*\>\)'
