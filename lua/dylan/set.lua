@@ -1,4 +1,4 @@
-vim.cmd('colorscheme tokyonight-night')
+vim.cmd('colorscheme tokyonight-storm')
 vim.cmd('let g:netrw_bufsettings = "noma nomod nu nowrap ro nobl"')
 
 vim.opt.nu = true

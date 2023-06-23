@@ -20,12 +20,14 @@ return require('packer').startup(function(use)
 	use( 'tpope/vim-fugitive' )
 	use( 'f-person/git-blame.nvim' )
 	use( 'lewis6991/gitsigns.nvim' )
+	use( 'RRethy/vim-illuminate' )
 	use( 'folke/tokyonight.nvim' )
 	use( 'kylechui/nvim-surround' )
 	use( 'folke/trouble.nvim' )
 	use( 'nvim-tree/nvim-tree.lua' )
 	use( 'kyazdani42/nvim-web-devicons' )
 	use( 'folke/which-key.nvim' )
+	use('akinsho/bufferline.nvim')
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',
