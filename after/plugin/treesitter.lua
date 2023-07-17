@@ -1,15 +1,15 @@
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 
-parser_config.GuidedTrack = {
-	install_info = {
-		url = "~/Documents/work/guidedtrack-syntax-highlighting-plugins/grammars/tree-sitter-GuidedTrack/",
-		files = {"src/parser.c"}
-	},
-}
+--parser_config.GuidedTrack = {
+--	install_info = {
+--		url = "~/Documents/work/guidedtrack-syntax-highlighting-plugins/grammars/tree-sitter-GuidedTrack/",
+--		files = {"src/parser.c"}
+--	},
+--}
 
 require'nvim-treesitter.configs'.setup {
 	-- A list of parser names, or "all"
-	ensure_installed = {"javascript", "typescript", "c", "lua", "rust" },
+	ensure_installed = {},
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = false,

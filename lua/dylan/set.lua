@@ -1,4 +1,5 @@
-vim.cmd('colorscheme tokyonight-storm')
+vim.opt.termguicolors = true
+vim.cmd('colorscheme everforest')
 vim.cmd('let g:netrw_bufsettings = "noma nomod nu nowrap ro nobl"')
 
 vim.opt.nu = true
@@ -17,7 +18,6 @@ vim.opt.backup = false
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
-vim.opt.termguicolors = true
 
 vim.opt.undodir = os.getenv("HOME") .. '/.vim/undodir'
 vim.opt.undofile = true
@@ -38,4 +38,3 @@ vim.opt.list = true
 vim.g.mapleader = " "
 
 vim.cmd("let g:gitblame_date_format = '%r'")
-vim.cmd("let g:statusline = '%{FugitiveStatusLine}' ")

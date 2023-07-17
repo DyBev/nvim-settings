@@ -7,27 +7,26 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
+	use('nvim-lua/plenary.nvim')
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.0',
-		-- or                            , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-	use( 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'} )
-	use( 'nvim-treesitter/playground' )
-	use( 'theprimeagen/harpoon' )
-	use( 'mbbill/undotree' )
-	use( 'tpope/vim-fugitive' )
-	use( 'f-person/git-blame.nvim' )
-	use( 'lewis6991/gitsigns.nvim' )
-	use( 'RRethy/vim-illuminate' )
-	use( 'folke/tokyonight.nvim' )
-	use( 'kylechui/nvim-surround' )
-	use( 'folke/trouble.nvim' )
-	use( 'nvim-tree/nvim-tree.lua' )
-	use( 'kyazdani42/nvim-web-devicons' )
-	use( 'folke/which-key.nvim' )
+	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+	use('nvim-treesitter/playground')
+	use('theprimeagen/harpoon')
+	use('mbbill/undotree')
+	use('RRethy/vim-illuminate')
+	use('kylechui/nvim-surround')
+	use('folke/trouble.nvim')
+	use('nvim-tree/nvim-tree.lua')
+	use('kyazdani42/nvim-web-devicons')
+	use('folke/which-key.nvim')
 	use('akinsho/bufferline.nvim')
+	use('norcalli/nvim-colorizer.lua')
+	use('NeogitOrg/neogit')
+	use('sindrets/diffview.nvim')
+	use('lewis6991/gitsigns.nvim')
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',
