@@ -56,7 +56,7 @@ syn match GTSpecial '\((\|)\)'
 syn match GuidedTrackSpecial '\(^\(\t*\)\?\*\(if\|for\)*:\(\_s\)\?\(.*\)\?\)\@<=\( in \| not \| or \| and \)'
 
 "comments
-syn match GuidedTrackComment '^--.*$'
+syn match GuidedTrackComment '^	*--.*$'
 syn match GuidedTrackDebug '^--DEBUG.*$'
 
 "error highlighting

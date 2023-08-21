@@ -7,9 +7,9 @@ vim.opt.rnu = true
 
 vim.opt.cursorline = true
 
-vim.opt.tabstop = 8
-vim.opt.softtabstop = 8
-vim.opt.shiftwidth = 8
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 
 vim.opt.smartindent = true
 vim.opt.wrap = true
@@ -17,7 +17,6 @@ vim.opt.wrap = true
 vim.opt.backup = false
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
-
 
 vim.opt.undodir = os.getenv("HOME") .. '/.vim/undodir'
 vim.opt.undofile = true
@@ -29,7 +28,7 @@ vim.opt.updatetime = 50
 
 vim.opt.listchars = {
 	eol = '$',
-	tab = '|->',
+	tab = '|  ',
 	trail = '.',
 }
 

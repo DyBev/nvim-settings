@@ -8,10 +8,8 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	use('nvim-lua/plenary.nvim')
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.0',
-	}
 
+	use('nvim-telescope/telescope.nvim')
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 	use('nvim-treesitter/playground')
 	use('theprimeagen/harpoon')
@@ -21,12 +19,12 @@ return require('packer').startup(function(use)
 	use('folke/trouble.nvim')
 	use('nvim-tree/nvim-tree.lua')
 	use('kyazdani42/nvim-web-devicons')
-	use('folke/which-key.nvim')
-	use('akinsho/bufferline.nvim')
 	use('norcalli/nvim-colorizer.lua')
 	use('NeogitOrg/neogit')
 	use('sindrets/diffview.nvim')
 	use('lewis6991/gitsigns.nvim')
+	use('epwalsh/obsidian.nvim')
+	use('preservim/vim-markdown')
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',
