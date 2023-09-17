@@ -1,11 +1,11 @@
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 
---parser_config.GuidedTrack = {
---	install_info = {
---		url = "~/Documents/work/guidedtrack-syntax-highlighting-plugins/grammars/tree-sitter-GuidedTrack/",
---		files = {"src/parser.c"}
---	},
---}
+parser_config.GuidedTrack = {
+	install_info = {
+		url = "~/Documents/01 work/02 guidedtrack-syntax-highlighting-plugins/grammars/tree-sitter-GuidedTrack/",
+		files = {"src/parser.c"}
+	},
+}
 
 require'nvim-treesitter.configs'.setup {
 	-- A list of parser names, or "all"

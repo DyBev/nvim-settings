@@ -1,7 +1,11 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-h>", "<C-d>zz")
+vim.keymap.set("v", "<C-h>", "<C-d>")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+vim.keymap.set("n", "<C-o>", "<C-o>zz")
+vim.keymap.set("n", "<C-n>", "<C-i>zz")
 
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")

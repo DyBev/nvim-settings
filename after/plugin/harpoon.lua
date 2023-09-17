@@ -8,4 +8,4 @@ vim.keymap.set("n", "<leader>hm", ui.toggle_quick_menu, { desc = "Open harpoon m
 vim.keymap.set("n","<leader>hh", function() ui.nav_file(1) end, { desc = "Jump to 1st file in harpoon" } )
 vim.keymap.set("n","<leader>hj", function() ui.nav_file(2) end, { desc = "Jump to 2nd file in harpoon" } )
 vim.keymap.set("n","<leader>hk", function() ui.nav_file(3) end, { desc = "Jump to 3rd file in harpoon" } )
-vim.keymap.set("n","<leader>hl", function() ui.nav_file(3) end, { desc = "Jump to 4th file in harpoon" } )
+vim.keymap.set("n","<leader>hl", function() ui.nav_file(4) end, { desc = "Jump to 4th file in harpoon" } )

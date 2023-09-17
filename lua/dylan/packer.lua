@@ -25,6 +25,9 @@ return require('packer').startup(function(use)
 	use('lewis6991/gitsigns.nvim')
 	use('epwalsh/obsidian.nvim')
 	use('preservim/vim-markdown')
+	use('olimorris/onedarkpro.nvim')
+	use('nvim-neorg/neorg')
+	use('adrian5/oceanic-next-vim')
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',
