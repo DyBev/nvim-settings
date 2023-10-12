@@ -15,7 +15,7 @@ if vim.g.vscode then
 else
 	--Neovim
 	require("dylan")
-	print("hello")
+	require("plugins")
 
 	vim.opt.backup = false
 	vim.opt.swapfile = false

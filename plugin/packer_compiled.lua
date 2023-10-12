@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/home/dybev/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["bufferline.nvim"] = {
-    loaded = true,
-    path = "/home/dybev/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
-    url = "https://github.com/akinsho/bufferline.nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/dybev/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -184,6 +179,21 @@ _G.packer_plugins = {
     path = "/home/dybev/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["obsidian.nvim"] = {
+    loaded = true,
+    path = "/home/dybev/.local/share/nvim/site/pack/packer/start/obsidian.nvim",
+    url = "https://github.com/epwalsh/obsidian.nvim"
+  },
+  ["oceanic-next"] = {
+    loaded = true,
+    path = "/home/dybev/.local/share/nvim/site/pack/packer/start/oceanic-next",
+    url = "https://github.com/mhartington/oceanic-next"
+  },
+  ["onedarkpro.nvim"] = {
+    loaded = true,
+    path = "/home/dybev/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim",
+    url = "https://github.com/olimorris/onedarkpro.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/dybev/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -219,10 +229,10 @@ _G.packer_plugins = {
     path = "/home/dybev/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
   },
-  ["which-key.nvim"] = {
+  ["vim-markdown"] = {
     loaded = true,
-    path = "/home/dybev/.local/share/nvim/site/pack/packer/start/which-key.nvim",
-    url = "https://github.com/folke/which-key.nvim"
+    path = "/home/dybev/.local/share/nvim/site/pack/packer/start/vim-markdown",
+    url = "https://github.com/preservim/vim-markdown"
   }
 }
 

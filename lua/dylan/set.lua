@@ -1,5 +1,5 @@
 vim.opt.termguicolors = true
-vim.cmd("colorscheme everforest")
+vim.cmd("colorscheme OceanicNext")
 vim.cmd('let g:netrw_bufsettings = "noma nomod nu nowrap ro nobl"')
 
 vim.opt.nu = true
