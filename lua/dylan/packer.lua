@@ -23,6 +23,7 @@ return require('packer').startup(function(use)
 	use('lewis6991/gitsigns.nvim')
 	use('olimorris/onedarkpro.nvim')
 	use('mhartington/oceanic-next')
+	use('marko-cerovac/material.nvim')
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',
