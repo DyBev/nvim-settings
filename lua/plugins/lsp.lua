@@ -1,52 +1,53 @@
-local lsp = require('lsp-zero')
-local cmp = require('cmp')
--- local cmp_action = require('lsp-zero').cmp_action()
+local lsp_zero = require('lsp-zero')
 local lspconfig = require('lspconfig')
--- local configs = require('lspconfig/configs')
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-lsp.preset('recommended')
-lsp.setup()
+lsp_zero.on_attach(function(client, bufnr)
+	local opts = {buffer = bufnr, remap = false}
 
-vim.diagnostic.config({
-	virtual_text = true,
+	vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+	vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+	vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+	vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+	vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+	vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+	vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+	vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+	vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+	vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+end)
+
+require('mason').setup({})
+require('mason-lspconfig').setup({
+	ensure_installed = {},
+	handlers = {
+		lsp_zero.default_setup,
+		lua_ls = function()
+			local lua_opts = lsp_zero.nvim_lua_ls()
+			require('lspconfig').lua_ls.setup(lua_opts)
+		end,
+	}
 })
+
+local cmp = require('cmp')
+local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
 cmp.setup({
-	mapping = {
-		['<Tab>'] = cmp.mapping(function(fallback)
-			-- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
-			if cmp.visible() then
-				local entry = cmp.get_selected_entry()
-				if not entry then
-					cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-					cmp.confirm()
-				else
-					cmp.confirm()
-				end
-			else
-				fallback()
-			end
-		end, {"i","s","c",}),
-	}
-})
-
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {
 	sources = {
-		{ name = 'buffer' }
-	}
-})
+		{name = 'path'},
+		{name = 'nvim_lsp'},
+		{name = 'nvim_lua'},
+		{name = 'luasnip', keyword_length = 2},
+		{name = 'buffer', keyword_length = 3},
+	},
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
-	sources = cmp.config.sources({
-		{ name = 'cmdline' }
-	})
+	formatting = lsp_zero.cmp_format(),
+	mapping = cmp.mapping.preset.insert({
+		['<C-o>'] = cmp.mapping.select_prev_item(cmp_select),
+		['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+		['<Tab>'] = cmp.mapping.confirm({ select = true }),
+		['<C-Space>'] = cmp.mapping.complete(),
+	}),
 })
-
-vim.keymap.set("n", "<leader>ds", function () vim.diagnostic.open_float() end)
 
 lspconfig.emmet_language_server.setup({
 	filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
@@ -59,3 +60,15 @@ lspconfig.emmet_language_server.setup({
 		}
 	}
 })
+
+lspconfig.pylsp.setup{
+	settings = {
+		pylsp = {
+			plugins = {
+				pycodestyle = {
+					ignore = {"E302", "E501", "W391", "E301", "E305"},
+				},
+			},
+		},
+	}
+}

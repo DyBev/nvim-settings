@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
 	use('olimorris/onedarkpro.nvim')
 	use('mhartington/oceanic-next')
 	use('marko-cerovac/material.nvim')
+	use('Biscuit-Colorscheme/nvim')
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',

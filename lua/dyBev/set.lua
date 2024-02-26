@@ -1,5 +1,6 @@
 vim.opt.termguicolors = true
-vim.cmd("colorscheme material")
+vim.cmd 'colorscheme material'
+vim.g.material_style = 'deep ocean'
 vim.cmd('let g:netrw_bufsettings = "noma nomod nu nowrap ro nobl"')
 
 vim.opt.nu = true
@@ -37,3 +38,5 @@ vim.opt.list = true
 vim.g.mapleader = " "
 
 vim.cmd("let g:gitblame_date_format = '%r'")
+vim.cmd("set colorcolumn=80,113")
+
