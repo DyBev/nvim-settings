@@ -1,11 +1,9 @@
-require("plugins.lsp")
-require("plugins.harpoon")
-require("plugins.gitsigns")
-require("plugins.undotree")
-require("plugins.colorizer")
-require("plugins.telescope")
-require("plugins.treesitter")
-require("plugins.diagnostics")
-require("plugins.nvim-surround")
-require("plugins.neogit")
-require("plugins.diffview")
+return {
+		"nordtheme/vim",
+		priority = 1000,
+		lazy = false,
+		config = function()
+			vim.o.termguicolors=true
+			vim.cmd([[colorscheme nord]])
+		end,
+}
