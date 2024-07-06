@@ -32,8 +32,8 @@ vim.keymap.set("v", "<leader>ys'", [["sdi'<esc>"spa'<esc>]], { desc = "Substitud
 vim.keymap.set("v", '<leader>ys"', [["sdi"<esc>"spa"<esc>]], { desc = "Substitude all occurances of word" } )
 
 --Quick fix list keymaps
-vim.keymap.set("n", "<leader>eh", [[:cn<CR>]], { desc = "Substitude all occurances of word" } )
-vim.keymap.set("n", "<leader>tu", [[:cp<CR>]], { desc = "Substitude all occurances of word" } )
+vim.keymap.set("n", "<leader>eh", [[:cn<CR>]], { desc = "Next Quickfix" } )
+vim.keymap.set("n", "<leader>tu", [[:cp<CR>]], { desc = "Previous Quickfix" } )
 
 --Jumplist exclusions
 local alphabet = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"}
@@ -47,30 +47,28 @@ vim.keymap.set("n", "}", [[:<C-u>execute "keepjumps norm! " . v:count1 . "}"<CR>
 vim.keymap.set("v", "}", function()
 	local currentMode = vim.api.nvim_get_mode().mode
 	local key = vim.api.nvim_replace_termcodes("<esc>", true, false, true)
-	vim.api.nvim_feedkeys(key, "m", true)
-	local r1, c1 = unpack(vim.api.nvim_buf_get_mark(0, "<"))
-	local r2, c2 = unpack(vim.api.nvim_buf_get_mark(0, ">"))
-	local currentRow = vim.api.nvim_get_current_line()
-	if r1 == currentRow then
+	vim.api.nvim_feedkeys(key, "t", true)
+	local r1 = vim.fn.getpos("v")[2]
+	local currentRow, currentCol = unpack(vim.api.nvim_win_get_cursor(0))
+	if r1 > currentRow then
 		key = vim.api.nvim_replace_termcodes(':<C-u>execute "keepjumps norm! " . v:count1 . "}"<CR>'..currentMode..'\'>o', true, false, true)
 	else
 		key = vim.api.nvim_replace_termcodes(':<C-u>execute "keepjumps norm! " . v:count1 . "}"<CR>'..currentMode..'\'<o', true, false, true)
 	end
 	vim.api.nvim_feedkeys(key, "m", true)
-end, {silent = true})
+end, {silent = false})
 
 vim.keymap.set("v", "{", function()
 	local currentMode = vim.api.nvim_get_mode().mode
 	local key = vim.api.nvim_replace_termcodes("<C-c>", true, false, true)
-	vim.api.nvim_feedkeys(key, "m", true)
-	local r1, c1 = unpack(vim.api.nvim_buf_get_mark(0, "<"))
-	local r2, c2 = unpack(vim.api.nvim_buf_get_mark(0, ">"))
-	local currentRow = vim.api.nvim_get_current_line()
-	if r1 == currentRow then
+	vim.api.nvim_feedkeys(key, "t", true)
+	local r1 = vim.fn.getpos("v")[2]
+	local currentRow, currentCol = unpack(vim.api.nvim_win_get_cursor(0))
+	if r1 > currentRow then
 		key = vim.api.nvim_replace_termcodes(':<C-u>execute "keepjumps norm! " . v:count1 . "{"<CR>'..currentMode..'\'>o', true, false, true)
 	else
 		key = vim.api.nvim_replace_termcodes(':<C-u>execute "keepjumps norm! " . v:count1 . "{"<CR>'..currentMode..'\'<o', true, false, true)
 	end
 	vim.api.nvim_feedkeys(key, "m", true)
-end, {silent = true})
+end, {silent = false})
 
