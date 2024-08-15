@@ -84,8 +84,8 @@ return {
 				{name = 'nvim_lsp'},
 				{name = 'nvim_lua'},
 				{name = 'luasnip', keyword_length = 2},
-				{name = 'rg', keyword_length = 3},
-				{name = 'buffer', keyword_length = 3},
+				{name = 'buffer', keyword_length = 5},
+				{name = 'rg', keyword_length = 5},
 			},
 
 			formatting = lsp_zero.cmp_format(),
@@ -131,19 +131,5 @@ return {
 				},
 			}
 		})
-
-		lspconfig.pylsp.setup{
-			settings = {
-				pylsp = {
-					plugins = {
-						pycodestyle = {
-							ignore = {"E302", "E501", "W391", "E301", "E305", "E711", "W191"},
-							-- E711 comparison to None should be 'if cond is not None:'
-							-- W191 Using Tabs for indent instead of spaces
-						},
-					},
-				},
-			}
-		}
 	end
 }
