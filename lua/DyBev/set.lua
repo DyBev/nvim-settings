@@ -54,4 +54,11 @@ vim.api.nvim_create_autocmd(
 	{ command = [[ set colorcolumn=80,113 ]] } 
 )
 
+--vim.api.nvim_create_autocmd(
+	--{"TextChanged", "TextChangedI"},
+	--{
+		--pattern = {"*.md"},
+		--command = [[ silent write ]]
+	--}
+--)
 
