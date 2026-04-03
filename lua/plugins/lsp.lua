@@ -53,7 +53,7 @@ return {
 
 		require('mason').setup({})
 		require('mason-lspconfig').setup({
-			ensure_installed = {},
+      ensure_installed = {},
 			handlers = {
 				lsp_zero.default_setup,
 				lua_ls = function()
@@ -140,5 +140,19 @@ return {
 				})
 			end,
 		})
+
+    lspconfig.gopls.setup{
+    cmd = { "/run/current-system/sw/bin/gopls" },
+    filetypes = { "go", "gomod" },
+    root_dir = require("lspconfig.util").root_pattern("go.mod", ".git"),
+    settings = {
+        gopls = {
+            analyses = {
+                unusedparams = true,
+            },
+            staticcheck = true,
+        },
+    },
+}
 	end
 }

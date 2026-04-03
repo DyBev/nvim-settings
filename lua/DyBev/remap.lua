@@ -1,6 +1,8 @@
 
 vim.g.mapleader = " "
 
+vim.keymap.set("i", "<C-c>", "<Esc>", { desc = "Exit insert mode" })
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-f>", "<Nop>")
