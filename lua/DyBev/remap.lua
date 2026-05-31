@@ -17,7 +17,9 @@ vim.keymap.set("n", "<leader>by", "\"+y", { desc = "Buffer Yank" } )
 vim.keymap.set("v", "<leader>by", "\"+y", { desc = "Buffer Yank" } )
 vim.keymap.set("n", "<leader>bp", "\"+p", { desc = "Buffer Paste" } )
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, {desc = "Open file tree"})
+-- Disabled becuase I am forced to use OIL for kotlin waaa waaa womp womp
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, {desc = "Open file tree"})
+vim.keymap.set("n", "<leader>pv", vim.cmd.Oil, {desc = "Open file tree"})
 
 -- Substitution keymaps
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Substitude all occurances of word" } )
