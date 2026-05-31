@@ -1,3 +1,4 @@
+local eslintutils = require("utils.eslint")
 
 return {
 	"VonHeikemen/lsp-zero.nvim",
@@ -26,7 +27,7 @@ return {
 
 	config = function()
 		local lsp_zero = require('lsp-zero')
-		local lspconfig = require('lspconfig')
+		local lspconfig = vim.lsp.config
 
 		local replace_termcodes = function(str)
 			return vim.api.nvim_replace_termcodes(str, true, true, true)
@@ -119,7 +120,7 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-		lspconfig.emmet_ls.setup({
+		lspconfig("emmet_ls", {
 			capabilities = capabilities,
 			filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
 			init_options = {
@@ -132,7 +133,8 @@ return {
 			}
 		})
 
-		lspconfig.eslint.setup({
+    vim.api.nvim_create_user_command("EslintFixAll", function() eslintutils.fix_all({ client = client, sync = true }) end, {})
+		lspconfig("eslint", {
 			on_attach = function(c, bufnr)
 				vim.api.nvim_create_autocmd("BufWritePre", {
 					buffer = bufnr,
@@ -141,7 +143,7 @@ return {
 			end,
 		})
 
-    lspconfig.gopls.setup{
+    lspconfig("gopls", {
     cmd = { "/run/current-system/sw/bin/gopls" },
     filetypes = { "go", "gomod" },
     root_dir = require("lspconfig.util").root_pattern("go.mod", ".git"),
@@ -152,7 +154,6 @@ return {
             },
             staticcheck = true,
         },
-    },
-}
-	end
+    }})
+  end
 }
